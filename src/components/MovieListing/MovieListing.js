@@ -10,39 +10,52 @@ import Slider from "react-slick";
 const MovieListing = () => {
 
 
-    // for movies
+
     const movies = useSelector(getAllMovies)
 
     let renderMovies = movies.Response;
-    // for shows
+
     const shows = useSelector(getAllShows)
     let renderShows = shows.Response;
 
-    return (
-        <div className='movie-wrapper'>
-            <div className="movie-list">
-                <h2>Movies</h2>
+    return ( <
+        div className = 'movie-wrapper' >
+        <
+        div className = "movie-list" >
+        <
+        h2 > Movies < /h2>
 
-                <div className='movie-container'>
-                    <Slider {...settings}>
-                        {renderMovies === "True" ? movies.Search.map((movie, index) => {
-                            return < MovieCard key={index} data={movie} />
-                        }) : <div className='movies-error' ><h2>{movies.Error}</h2></div>}
-                    </Slider>
-                </div>
+        <
+        div className = 'movie-container' >
+        <
+        Slider {...settings } > {
+            renderMovies === "True" ? movies.Search.map((movie, index) => {
+                return <MovieCard key = { index }
+                data = { movie }
+                />
+            }) : < div className = 'movies-error' > < h2 > { movies.Error } < /h2></div >
+        } <
+        /Slider> <
+        /div>
 
-            </div>
-            <div className="movie-list">
-                <h2>Shows</h2>
-                <div className='movie-container'>
-                    <Slider {...settings}>
-                        {renderShows === "True" ? shows.Search.map((show, index) => {
-                            return < MovieCard key={index} data={show} />
-                        }) : <div className='movies-error' ><h2>{movies.Error}</h2></div>}
-                    </Slider>
-                </div>
-            </div>
-        </div>
+        <
+        /div> <
+        div className = "movie-list" >
+        <
+        h2 > Recently Viewed < /h2> <
+        div className = 'movie-container' >
+        <
+        Slider {...settings } > {
+            renderShows === "True" ? shows.Search.map((show, index) => {
+                return <MovieCard key = { index }
+                data = { show }
+                />
+            }) : < div className = 'movies-error' > < h2 > { movies.Error } < /h2></div >
+        } <
+        /Slider> <
+        /div> <
+        /div> <
+        /div>
     )
 }
 

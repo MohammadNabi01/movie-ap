@@ -25,19 +25,32 @@ const Header = () => {
         event.preventDefault();
 
     }
-    return (
-        <div className='header'>
-            <div className="logo"><Link to='/'>Movie Dekho</Link></div>
-            <div className="search-bar">
-                <form onSubmit={submitHandler}>
-                    <input type="text" value={term} placeholder='Search movie or show' name="search" onChange={handleChange} />
-                    <button type='submit'> <i className="fa fa-search"></i> </button>
-                </form>
-            </div>
-            <div className="user-img">
-                <img src={user} alt="user-img" />
-            </div>
-        </div>
+    return ( <
+        div className = 'header' >
+        <
+        div className = "logo" > < Link to = '/' > Nabis Movie - App < /Link></div >
+        <
+        div className = "search-bar" >
+        <
+        form onSubmit = { submitHandler } >
+        <
+        input type = "text"
+        value = { term }
+        placeholder = 'Search movie or show'
+        name = "search"
+        onChange = { handleChange }
+        /> <
+        button type = 'submit' > < i className = "fa fa-search" > < /i> </button >
+        <
+        /form> <
+        /div> <
+        div className = "user-img" >
+        <
+        img src = { user }
+        alt = "user-img" / >
+        <
+        /div> <
+        /div>
     )
 }
 
